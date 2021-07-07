@@ -1,0 +1,14 @@
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\bin\Debug\net5.0\ETicaretDB.deps.json
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\bin\Debug\net5.0\ETicaretDB.runtimeconfig.json
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\bin\Debug\net5.0\ETicaretDB.runtimeconfig.dev.json
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\bin\Debug\net5.0\ETicaretDB.dll
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\bin\Debug\net5.0\ref\ETicaretDB.dll
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\bin\Debug\net5.0\ETicaretDB.pdb
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ETicaretDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ETicaretDB.AssemblyInfoInputs.cache
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ETicaretDB.AssemblyInfo.cs
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ETicaretDB.csproj.CoreCompileInputs.cache
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ETicaretDB.dll
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ref\ETicaretDB.dll
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ETicaretDB.pdb
+C:\Users\M3ki\source\repos\E-Ticaret\ETicaretDB\obj\Debug\net5.0\ETicaretDB.genruntimeconfig.cache

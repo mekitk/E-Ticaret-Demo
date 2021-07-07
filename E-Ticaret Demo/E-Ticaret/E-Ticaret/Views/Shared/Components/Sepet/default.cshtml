@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+
+
+    <div class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Sepet</span>
+            <div class="qty">3</div>
+        </a>
+        <div class="cart-dropdown">
+            @if (ViewBag.cart != null)
+            {
+                @foreach (var item in ViewBag.cart)
+                {
+                    <div class="cart-list">
+                        <div class="product-widget">
+                            <div class="product-img">
+                                <img src="./img/product01.png" alt="">
+                            </div>
+                            <div class="product-body">
+                                <h3 class="product-name"><a href="#">@item.Product.Adi</a></h3>
+                                <h4 class="product-price"><span class="qty">1x</span>@(item.Product.SatisFiyat * item.Quantity)</h4>
+                            </div>
+                            @*<button class="delete"><i class="fa fa-close" ></i></button>*@
+                            <a class="fa fa-remove" style="color:red" asp-controller="cart" asp-action="remove" asp-route-id="@item.Product.Id"></a>
+                        </div>
+
+
+                    </div>
+
+                    <div class="cart-summary">
+                        @*<small>11 Item(s) selected</small>*@
+                        <h5>SUBTOTAL:@(item.Product.SatisFiyat * item.Quantity)</h5>
+                    </div>
+                }
+            }
+        <div class="cart-btns">
+            <a style="color:red" asp-controller="cart" asp-action="index">View Cart</a>
+            @*<a href="~/cart/index">View Cart</a>*@
+            <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+        </div>
+    </div>
+

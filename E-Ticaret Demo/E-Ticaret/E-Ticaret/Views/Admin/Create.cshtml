@@ -1,0 +1,19 @@
+﻿@model ETicaretDB.Models.Marka
+@{
+    ViewData["Title"] = "Kayıt";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Marka Kayıt</h2>
+<form method="post">
+    <p>
+        <label asp-for="Adi">Adi:</label>
+        <input asp-for="Adi" />
+    </p>
+    <p>
+        <label asp-for="Resimyol">ResimYol:</label>
+        <input asp-for="Resimyol" />
+    </p>
+
+    <p><button type="submit">Kaydet</button></p>
+</form>

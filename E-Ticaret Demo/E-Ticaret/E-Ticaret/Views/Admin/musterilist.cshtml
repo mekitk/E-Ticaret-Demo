@@ -1,0 +1,70 @@
+﻿@model List<ETicaretDB.DTO.MusteriListDTO>
+@{
+    ViewData["Title"] = "musterilist";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<h1>Müşteri Listesi</h1>
+
+
+<td>
+    <a href="/Home/Create">
+        <img src="~/AdminPanel/images/icons8-plus-16.png" />
+        Yeni Kayıt
+    </a>
+</td>
+
+<div class="container">
+    <input class="form-control mb-4" id="tableSearch" type="text"
+           placeholder="Type something to search list items">
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>İsim</th>
+                <th>Soyad</th>
+                <th>E-Mail</th>
+                <th>Adres</th>
+                <th>Telefon</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            @foreach (var item in Model)
+            {
+
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Soyadi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KullaniciAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefon)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+

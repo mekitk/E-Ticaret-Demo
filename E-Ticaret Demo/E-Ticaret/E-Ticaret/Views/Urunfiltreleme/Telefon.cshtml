@@ -1,0 +1,58 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+@model IPagedList<ETicaretDB.DTO.UrunListDTO>
+
+
+@{
+    ViewData["Title"] = "Telefon";
+    Layout = "~/Views/Shared/KategoriLayout.cshtml";
+
+}
+
+
+
+<div class="row">
+    <!-- product -->
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4 col-xs-6">
+            <div class="product">
+                <div class="product-img">
+                    <img src="~/@urun.KucukYol" alt="">
+                    <div class="product-label">
+                        <span class="sale">-30%</span>
+                        <span class="new">NEW</span>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">@urun.Adi</p>
+                    <h3 class="product-name"><a href="#">@urun.Aciklama</a></h3>
+                    <h6 class="product-price">@urun.Ozellikler</h6>
+                    <h4 class="product-price">@urun.SatisFiyat<del class="product-old-price">4000</del></h4>
+
+                    <div class="product-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="product-btns">
+                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                        <a class="fa fa-eye" href="/Urun/Index/@urun.UrunId"></a>
+                    </div>
+                </div>
+                <div class="add-to-cart">
+                    <a asp-action="Buy" asp-controller="Cart" asp-route-id="@urun.UrunId" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> sepete ekle</a>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- /product -->
+</div>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+

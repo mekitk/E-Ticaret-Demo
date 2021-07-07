@@ -1,0 +1,54 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+
+</head>
+<body>
+    
+    <h3>Ürün Listesi</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+
+        <tr>
+            <th>Id</th>
+            <th>Adi</th>
+            <th>Fotoğraf</th>
+            <th>Fiyatı</th>
+        </tr>
+        @if (ViewBag.product != null)
+        {
+
+
+        @foreach (var product in ViewBag.product)
+        {
+            <tr>
+                <th>@product.Id</th>
+                <th>@product.Adi</th>
+                <th>@product.Ozellikler</th>
+                <th>@product.SatisFiyat</th>
+                <th><img src="~/AnaTasarim/img/@product.KucukYol" width="60"></th>
+                <td align="center">
+                    <a asp-controller="UrunFiltreleme" asp-action="AddToCart" asp-route-id="@product.Id">Satın AL</a>
+                </td>
+
+            </tr>
+        }
+
+
+
+        }
+
+
+
+
+    </table>
+</body>
+</html>

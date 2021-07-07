@@ -1,0 +1,85 @@
+﻿@model List<ETicaretDB.DTO.MarkaListDTO>
+@{
+    ViewData["Title"] = "Markalist";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<h1>Marka Listesi</h1>
+
+
+<td>
+    <a href="/Admin/Create">
+        <img src="~/AdminPanel/images/icons8-plus-16.png" />
+        Yeni Kayıt
+    </a>
+</td>
+
+<div class="container">
+    <input class="form-control mb-4" id="tableSearch" type="text"
+           placeholder="Type something to search list items">
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+
+                <th>Marka Adı</th>
+                <th>Resim</th>
+
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KucukYol)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+
+                        @*<button asp-action="Detail"  id="@item.Id" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Detayy
+                        </button>*@
+                      
+
+                        @*<button onclick="location.href='@Url.Action("Detail", "Admin")';return false;">detay</button>*@
+
+
+
+                       <a asp-action="Detail" asp-route-id="@item.Id">Details</a>|
+
+
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @await Component.InvokeAsync("Detay");
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+

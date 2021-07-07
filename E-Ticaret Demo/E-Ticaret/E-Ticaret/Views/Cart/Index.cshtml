@@ -1,0 +1,129 @@
+﻿@{
+    Layout = null;
+}
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h3>Cart Page</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Option</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        @foreach (var item in ViewBag.cart)
+        {
+            <tr>
+                <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.Product.Id">Remove</a></td>
+                <td>@item.Product.Id</td>
+                <td>@item.Product.Name</td>
+                <td><img src="~/images/@item.Product.Photo" width="60" /> </td>
+                <td>@item.Product.Price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Product.Price * item.Quantity)</td>
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="6">Sum</td>
+            <td>
+                @ViewBag.total
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a asp-controller="product" asp-action="index">Continue Shopping</a>
+
+</body>
+</html>*@
+
+<link href="~/SepetTasarım/StyleSheet.css" rel="stylesheet" />
+<script src="~/SepetTasarım/JavaScript.js"></script>
+<link href="~/AnaTasarim/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="wrap cf">
+    <h1 class="projTitle"><span></span>SEPET</h1>
+    <div class="heading cf">
+
+     <a asp-controller="Urunfiltreleme" asp-action="Bilgisayar">Continue Shopping</a>
+    </div>
+    <div class="cart">
+        <!--    <ul class="tableHead">
+              <li class="prodHeader">Product</li>
+              <li>Quantity</li>
+              <li>Total</li>
+               <li>Remove</li>
+            </ul>-->
+        <ul class="cartWrap">
+            <li class="items odd">
+                @if (ViewBag.cart != null)
+                {
+
+                
+                @foreach (var item in ViewBag.cart)
+                {
+                    <div class="infoWrap">
+                        <div class="cartSection">
+
+                            <img src="~/AnaTasarim/img/product06.png" alt="" class="itemImg" />
+                            <p class="itemNumber"></p>
+                            <h3>@item.Product.Adi</h3>
+
+                            <p> <input type="text" class="qty" placeholder="@item.Quantity" /> @(item.Product.SatisFiyat * item.Quantity)</p>
+
+                            <p class="stockStatus"> In Stock</p>
+                        </div>
+
+
+                        <div class="prodTotal cartSection">
+                          
+                            <p>@item.Product.SatisFiyat</p>
+                        </div>
+                        <div class="cartSection removeWrap">
+                            <a class="fa fa-remove" style="color:red" asp-controller="cart" asp-action="remove" asp-route-id="@item.Product.Id"></a>
+                        </div>
+                    </div>
+                }
+                }
+            </li>
+
+
+
+
+
+            <!--<li class="items even">Item 2</li>-->
+
+        </ul>
+    </div>
+
+    <div class="promoCode">
+        <label for="promo">Promosyon kodunuz var mı?</label><input type="text" name="promo" placholder="Enter Code" />
+        <a href="#" class="btn"></a>
+    </div>
+
+    <div class="subtotal cf">
+        <ul>
+            <li class="totalRow"><span class="label">Subtotal</span><span class="value">@ViewBag.total</span></li>
+
+            <li class="totalRow"><span class="label">Shipping</span><span class="value">$--</span></li>
+
+            <li class="totalRow"><span class="label">Tax</span><span class="value">$--</span></li>
+            <li class="totalRow final"><span class="label">Total</span><span class="value">@ViewBag.total</span></li>
+            <li class="totalRow"><a href="#" class="btn continue">Ödeme</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<link href="~/AnaTasarim/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/SepetTasarım/StyleSheet.css" rel="stylesheet" />
+<script src="~/SepetTasarım/JavaScript.js"></script>

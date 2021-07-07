@@ -1,0 +1,38 @@
+﻿@model List<ETicaretDB.DTO.UrunListDTO>
+<!-- Products tab & slick -->
+
+@foreach (var item in Model)
+{
+
+
+
+
+
+
+
+            
+
+                   
+                        <!-- product widget -->
+                        <div class="product-widget">
+                            <div class="product-img">
+                                <img src="~/AnaTasarim/img/product07.png" alt="">
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">@item.KategoriAdi</p>
+                                <h3 class="product-name"><a href="#">@item.Adi</a></h3>
+                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                            </div>
+                        </div>
+                        <!-- /product widget -->
+                        <!-- product widget -->
+                        
+              
+            
+
+          
+
+           
+
+      
+}

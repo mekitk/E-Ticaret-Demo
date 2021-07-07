@@ -1,0 +1,56 @@
+﻿@model List<ETicaretDB.DTO.UrunListDTO>
+<!-- Products tab & slick -->
+
+@foreach (var item in Model)
+{
+    
+                        <!-- product -->
+                        <div class="product">
+                            <div class="product-img">
+                                <img src="~/AnaTasarim/img/@item.KucukYol" alt="">
+                                <div class="product-label">
+                                    <span class="sale">-30%</span>
+                                    <span class="new">Yeni</span>
+                                </div>
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">@item.KategoriAdi</p>
+                                <h3 class="product-name"><a href="#">@item.Adi</a></h3>
+                                <h4 class="product-price">@item.SatisFiyat <del class="product-old-price">$990.00</del></h4>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product-btns">
+                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Favorilere Ekle</span></button>
+                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Karşılaştırmaya Ekle</span></button>
+                                    <a class="fa fa-eye" alt="Hızlı Bakış" href="/Urun/Index/@item.UrunId"></a>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Sepete Ekle</button>
+                            </div>
+                        </div>
+                        <!-- /product -->
+                        <!-- product -->
+                      
+                        <!-- /product -->
+                        <!-- product -->
+                        
+                        <!-- /product -->
+                        <!-- product -->
+                        
+                        <!-- /product -->
+                        <!-- product -->
+                       
+                        <!-- /product -->
+                   
+    <!-- Products tab & slick -->
+
+    <!-- /container -->
+  
+
+}

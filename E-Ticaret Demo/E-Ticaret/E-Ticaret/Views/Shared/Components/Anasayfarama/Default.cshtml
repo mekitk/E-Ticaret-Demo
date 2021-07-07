@@ -1,0 +1,40 @@
+﻿@{
+    IList<SelectListItem> selectListItems = new List<SelectListItem>();
+    selectListItems.Add(new SelectListItem { Text = "test", Value = "3" });
+    ViewBag.SelectList = selectListItems;
+
+}
+<link href="~/css/site.css" rel="stylesheet" />
+<link href="~/AnaTasarim/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/AnaTasarim/css/style.css" rel="stylesheet" />
+<script src="~/AnaTasarim/js/bootstrap.min.js"></script>
+<script src="~/AnaTasarim/js/jquery.min.js"></script>
+
+@using (Html.BeginForm("Search", "Urunfiltreleme", FormMethod.Post))
+{
+    @*<div class="col-md-6">
+            <div class="header-search" asp-controller="Urunfiltreleme" asp-action="Search">
+                <form>
+                    <select class="input-select">
+                        <option value="0">All Categories</option>
+                        <option value="1">Category 01</option>
+                        <option value="1">Category 02</option>
+                    </select>
+                    <input class="input" placeholder="Search here">
+                    <button class="search-btn">Search</button>
+                </form>
+            </div>
+        </div>*@
+
+    <div class="col-md-6" asp-controller="Urunfiltreleme" asp-action="Search">
+        @*<div class="header-search" asp-controller="Urunfiltreleme" asp-action="Search">*@
+        <form method="post" asp-controller="Urunfiltreleme" asp-action="Search">
+            @Html.DropDownList("SelectList", new SelectList(ViewBag.SelectList, "Value", "Text"), "Kategori Seçiniz", new { style = "height: 25px", @class = "dropdown" })
+            <input style="width: 350px"  type="text" id="txtSearch" name="search2" />
+
+            <input type="submit" value="Ara" />
+
+        </form>
+        @*</div>*@
+    </div>
+}
